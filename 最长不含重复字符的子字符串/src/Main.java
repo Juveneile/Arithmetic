@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * "arabcacfr"
@@ -9,7 +10,10 @@ import java.util.Map;
  */
 public class Main {
     public static void main(String[] args) {
-        String str = "arabcdacfr";
+        Scanner in = new Scanner(System.in);
+        String str = in.next();
+        in.close();
+        //String str = "arabcdacfr";
         System.out.println(longestSubStringWithoutDuplication2(str));
     }
 

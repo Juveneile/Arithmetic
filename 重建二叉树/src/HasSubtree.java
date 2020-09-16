@@ -5,7 +5,7 @@
  */
 public class HasSubtree {
     public static void main(String[] args) {
-        Object[] valuesA = {1, 2, 3, 4, 5, 6, 7};
+        Object[] valuesA = {1, 2, 3, 4, 5};
         Object[] valuesB = {2, 4, 5};
         BinaryTreeNode binaryTreeNodeA = new BinaryTreeNode();
         binaryTreeNodeA.createBinaryTree(valuesA);
@@ -18,7 +18,7 @@ public class HasSubtree {
         System.out.println();
         System.out.println(hasSubTree(binaryTreeNodeA.getRoot(), binaryTreeNodeB.getRoot()));*/
 
-        binaryTreeNodeA.postOrderTraverse2(binaryTreeNodeA.getRoot());
+        System.out.println(binaryTreeNodeA.preOrderTraverse2(binaryTreeNodeA.getRoot()));
     }
 
     private static boolean hasSubTree(BinaryTreeNode rootA, BinaryTreeNode rootB) {

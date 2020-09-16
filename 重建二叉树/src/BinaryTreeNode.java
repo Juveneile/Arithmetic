@@ -63,12 +63,15 @@ public class BinaryTreeNode {
      *
      * @param rootNode
      */
-    public void preOrderTraverse2(BinaryTreeNode rootNode) {
+    public String preOrderTraverse2(BinaryTreeNode rootNode) {
         BinaryTreeNode node = rootNode;
         Stack<BinaryTreeNode> stack = new Stack<>();
+        StringBuilder result = new StringBuilder();
         while (node != null || !stack.empty()) {
             if (node != null) {
-                System.out.print(node.getValue() + "->");
+                result.append(node.getValue());
+                result.append(",");
+               // System.out.print(node.getValue() + "->");
                 stack.push(node);
                 node = node.getLeftNode();
             } else {
@@ -76,7 +79,8 @@ public class BinaryTreeNode {
             }
 
         }
-
+        result.deleteCharAt(result.length()-1);
+        return result.toString();
     }
 
     /**
@@ -127,7 +131,7 @@ public class BinaryTreeNode {
     /**
      * 后序遍历
      */
-    public void postOrderTraverse2(BinaryTreeNode rootNode){
+    public void postOrderTraverse2(BinaryTreeNode rootNode) {
         BinaryTreeNode cur, pre = null;
 
         Stack<BinaryTreeNode> stack = new Stack<>();
@@ -135,12 +139,12 @@ public class BinaryTreeNode {
 
         while (!stack.empty()) {
             cur = stack.peek();
-            if ((cur.getLeftNode() == null && cur.getRightNode() == null) || (pre != null && (pre == cur.getLeftNode()  || pre == cur.getRightNode()))) {
+            if ((cur.getLeftNode() == null && cur.getRightNode() == null) || (pre != null && (pre == cur.getLeftNode() || pre == cur.getRightNode()))) {
                 System.out.print(cur.getValue() + "->");
                 stack.pop();
                 pre = cur;
             } else {
-                if (cur.getRightNode()!= null) {
+                if (cur.getRightNode() != null) {
                     stack.push(cur.getRightNode());
                 }
                 if (cur.getLeftNode() != null) {

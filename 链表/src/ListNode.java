@@ -2,26 +2,26 @@
  * @author hxxhk
  */
 public class ListNode {
-    private Object value;
-    private ListNode nextNode;
+    public ListNode next;
+    public int value;
 
-    public ListNode(Object value){
+    public ListNode(int value){
         this.value = value;
     }
 
-    public Object getValue() {
+    public ListNode getNext() {
+        return next;
+    }
+
+    public void setNext(ListNode next) {
+        this.next = next;
+    }
+
+    public int getValue() {
         return value;
     }
 
-    public void setValue(Object value) {
+    public void setValue(int value) {
         this.value = value;
-    }
-
-    public ListNode getNextNode() {
-        return nextNode;
-    }
-
-    public void setNextNode(ListNode nextNode) {
-        this.nextNode = nextNode;
     }
 }
